@@ -8,7 +8,7 @@
 <body>
     <h1>Qual o seu país?</h1>
 
-    País de nascimento: <input type="text" name="txtpais" id="txtpais">
+    País de nascimento: <input type="text" name="pais" id="pais">
     <input type="button" value="Verificar" onclick="verificar()">
     <div id="res">
 
@@ -16,18 +16,16 @@
 
     <script>
         function verificar() {
-            var txtp = window.document.querySelector('input#txtpais')
-            var res = window.document.querySelector('div#res')
-            var p = String(txtp.value)
-            res.innerHTML = `<p>Seu país de Origem é <strong>${p}</strong>.</p>`
+            var p = window.document.getElementById('pais') 
+            var res = window.document.getElementById('res')
+            var nasc = String(p.value)
+            res.innerHTML = `<p>Seu país de Origem é <strong>${nasc}</strong>.</p>`
 
-            if (p != Brasil) {
-                res.innerHTML += `<p>Você é <strong>Estrangeiro</strong>.</p>`
-                res.innerHTML += `<p>Curta a estadia em nosso País</p>`
-            } else {
-                res.innerHTML = `<p>Você é <strong>Brasileiro</strong>.</p>`
+            if (nasc === Brasil) {
+                res.innerText =+ (`Você é estrangeiro`)
             }
         }
     </script>
+
 </body>
 </html>
